@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', system-ui, sans-serif; }
+  body {
+    background-color: #08080A;
+    color: #F8FAFC;
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+  }
+  .card {
+    background: #101116;
+    border: 1px solid #1E202A;
+    border-radius: 12px;
+  }
+  .btn-purple {
+    background: #6D28D9;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-size: 14px;
+  }
+  .btn-dark {
+    background: #181920;
+    border: 1px solid #282B38;
+    color: #CBD5E1;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+</style>
+
+<style>
+  body { width: 1920px; height: 1080px; padding: 24px 40px; display: flex; flex-direction: column; gap: 20px; }
+  .doctor-header {
+    background: #0E1018; border: 1px solid #1F2232; border-radius: 14px; padding: 20px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .summary-card {
+    background: #11131C; border: 1px solid #202436; border-radius: 12px; padding: 18px 24px;
+  }
+  .tabs-bar {
+    display: flex; gap: 8px; border-bottom: 1px solid #1E212E; padding-bottom: 2px;
+  }
+  .tab-btn {
+    padding: 10px 20px; font-weight: 700; font-size: 14px; border-radius: 8px 8px 0 0; color: #94A3B8;
+  }
+  .tab-btn.active {
+    background: #161824; color: #C084FC; border-bottom: 2px solid #8B5CF6;
+  }
+</style>
+</head>
+<body>
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div style="width:48px; height:48px; border-radius:50%; background:#2E1065; color:#C084FC; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800;">د</div>
+      <div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <h1 style="font-size:22px; font-weight:800; color:#FFFFFF;">د. دكتور احمد</h1>
+          <span style="background:#064E3B; color:#34D399; font-size:11px; font-weight:700; padding:2px 10px; border-radius:12px;">الأطباء النشطون</span>
+          <span style="background:#78350F; color:#FDE68A; font-size:11px; font-weight:700; padding:2px 10px; border-radius:12px;">Doc Inactive Since 999 day</span>
+        </div>
+        <span style="font-size:12px; color:#64748B; margin-top:4px; display:block;">📍 المنطقة / المحافظة: بغداد</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn-purple">$ أسعار مخصصة</button>
+      <button class="btn-dark">تعديل</button>
+      <button class="btn-dark" style="color:#EF4444;">🗑️ أرشفة أو حذف</button>
+      <button class="btn-dark" style="background:#047857; color:white;">📥 تصدير PDF</button>
+      <button class="btn-dark">🖨️ طباعة كشف الحساب</button>
+      <span style="font-size:20px; color:#64748B; cursor:pointer; margin-right:8px;">✕</span>
+    </div>
+  </div>
+
+  <!-- 4 Summary Cards -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <span style="font-size:12px; color:#94A3B8;">صافي الفواتير</span>
+      <span style="font-size:26px; font-weight:800; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">قبل الخصم: 0 د.ع</span>
+    </div>
+
+    <div class="summary-card">
+      <span style="font-size:12px; color:#94A3B8;">مجموع الخصومات الممنوحة</span>
+      <span style="font-size:26px; font-weight:800; color:#FBBF24; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">0 خصم ممنوح</span>
+    </div>
+
+    <div class="summary-card">
+      <span style="font-size:12px; color:#94A3B8;">المبلغ المسدد</span>
+      <span style="font-size:26px; font-weight:800; color:#34D399; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">0 وصل قبض</span>
+    </div>
+
+    <div class="summary-card" style="border-color:#831843;">
+      <span style="font-size:12px; color:#F472B6;">الرصيد المتبقي</span>
+      <span style="font-size:26px; font-weight:800; color:#F43F5E; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#9F1239;">مستحقات المختبر</span>
+    </div>
+  </div>
+
+  <!-- Tabs Navigation -->
+  <div class="tabs-bar">
+    <div class="tab-btn active">الفواتير والحالات (0)</div>
+    <div class="tab-btn">تسديدات حساب (0)</div>
+    <div class="tab-btn">الخصومات والتخفيضات (0)</div>
+    <div class="tab-btn">🏷️ أسعار مخصصة</div>
+    <div class="tab-btn">💬 الملاحظات والتفضيلات</div>
+  </div>
+
+  <!-- Table View / Search Bar -->
+  <div class="card" style="flex:1; padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="background:#151722; border:1px solid #232736; border-radius:8px; padding:10px 16px; color:#64748B; font-size:13px; width:500px;">
+        🔍 بحث في الفواتير (اسم المريض، نوع العمل، التاريخ، الحالة...)
+      </div>
+      <div style="display:flex; gap:12px; align-items:center;">
+        <span style="font-size:12px; color:#64748B; font-family:'JetBrains Mono';">المعروض: 0 / 0</span>
+        <button class="btn-purple">+ فاتورة جديدة</button>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; gap:12px; opacity:0.6;">
+      <span style="font-size:36px;">🧾</span>
+      <p style="font-size:14px; color:#94A3B8;">لا توجد فواتير مطابقة لمعايير البحث</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', system-ui, sans-serif; }
+  body {
+    background-color: #08080A;
+    color: #F8FAFC;
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+  }
+  .card {
+    background: #101116;
+    border: 1px solid #1E202A;
+    border-radius: 12px;
+  }
+  .btn-purple {
+    background: #6D28D9;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-size: 14px;
+  }
+  .btn-dark {
+    background: #181920;
+    border: 1px solid #282B38;
+    color: #CBD5E1;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+</style>
+
+<style>
+  body { width: 1920px; height: 960px; padding: 24px 40px; display: flex; flex-direction: column; gap: 16px; }
+</style>
+</head>
+<body>
+  <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid #1E212E;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-size:24px;">📄</span>
+      <div>
+        <h1 style="font-size:20px; font-weight:800; color:#FFFFFF;">نظام كشوفات الحسابات وال PDF (Themes & Statements)</h1>
+        <span style="font-size:12px; color:#64748B;">تخصيص الشعار، اختيار نمط وثيم الكشف، المعاينة الحية، والتصدير المباشر كملف PDF عالي الدقة</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn-dark">👁️ معاينة كاملة</button>
+      <button class="btn-dark" style="background:#047857; color:white;">📥 تصدير PDF</button>
+      <button class="btn-purple">🖨️ معاينة / طباعة</button>
+    </div>
+  </div>
+
+  <!-- Theme selector bar -->
+  <div style="display:flex; justify-content:space-between; align-items:center; background:#12141F; border:1px solid #202436; border-radius:10px; padding:10px 18px;">
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span style="font-size:13px; font-weight:700;">الثيم النشط حالياً:</span>
+      <button class="btn-dark" style="background:#6D28D9; color:white; padding:4px 14px;">المالي المكثف (Compact Financial)</button>
+      <button class="btn-dark" style="padding:4px 14px;">الرسمي</button>
+      <button class="btn-dark" style="padding:4px 14px;">الاحترافي</button>
+      <button class="btn-dark" style="padding:4px 14px;">جداول</button>
+      <button class="btn-dark" style="padding:4px 14px;">مينيمال</button>
+    </div>
+    <div style="display:flex; gap:12px;">
+      <span class="btn-dark" style="font-size:12px;">اختر الطبيب: د. دكتور احمد (بغداد) ▼</span>
+    </div>
+  </div>
+
+  <!-- Statement Sheet Preview (White Paper Inside Dark Environment) -->
+  <div style="flex:1; background:#0B0C12; border:1px solid #1E212E; border-radius:12px; padding:20px; display:flex; justify-content:center; overflow:hidden;">
+    <div style="width:1050px; background:white; color:#0F172A; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8); padding:32px; font-size:12px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0F172A; padding-bottom:14px; margin-bottom:14px;">
+          <div>
+            <h2 style="font-size:18px; font-weight:800; color:#0F172A;">كشف حساب الطبيب: د. دكتور احمد</h2>
+            <span style="font-size:11px; color:#475569;">ثيم الحسابات المكثف • مختبر صناعة الاسنان</span>
+          </div>
+          <div style="text-align:left;">
+            <span style="font-size:20px; font-weight:900; letter-spacing:1px; display:block;">ALPHA LAB</span>
+            <span style="font-size:10px; color:#64748B;">DENTAL LABORATORY</span>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; background:#F8FAFC; padding:10px 14px; border-radius:6px; border:1px solid #E2E8F0; margin-bottom:16px;">
+          <div><span style="color:#64748B;">الطبيب:</span> <strong>د. دكتور احمد (بغداد)</strong></div>
+          <div><span style="color:#64748B;">الفترة:</span> <strong>Start → Now</strong></div>
+          <div><span style="color:#64748B;">التاريخ:</span> <strong>10-15-2026</strong></div>
+        </div>
+
+        <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+          <thead>
+            <tr style="background:#F1F5F9; border-bottom:2px solid #CBD5E1; font-weight:700; color:#334155; font-size:11px;">
+              <th style="padding:8px; text-align:right;">#</th>
+              <th style="padding:8px; text-align:right;">التاريخ</th>
+              <th style="padding:8px; text-align:right;">المريض</th>
+              <th style="padding:8px; text-align:right;">العمل</th>
+              <th style="padding:8px; text-align:center;">العدد</th>
+              <th style="padding:8px; text-align:left;">السعر</th>
+              <th style="padding:8px; text-align:left;">الخصم</th>
+              <th style="padding:8px; text-align:left;">الصافي</th>
+              <th style="padding:8px; text-align:center;">الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #E2E8F0; color:#64748B; text-align:center;">
+              <td colspan="9" style="padding:28px;">لا توجد فواتير مسجلة في هذا الكشف</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; border-top:2px solid #0F172A; padding-top:12px;">
+        <span style="color:#64748B; font-size:11px;">صفحة 1 من 1 • تم استخراج الكشف آلياً بواسطة Alpha Lab Management System</span>
+        <strong style="font-size:14px; color:#0F172A;">الرصيد النهائي المستحق: 0 د.ع</strong>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

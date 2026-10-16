@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', system-ui, sans-serif; }
+  body {
+    background-color: #08080A;
+    color: #F8FAFC;
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+  }
+  .card {
+    background: #101116;
+    border: 1px solid #1E202A;
+    border-radius: 12px;
+  }
+  .btn-purple {
+    background: #6D28D9;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-size: 14px;
+  }
+  .btn-dark {
+    background: #181920;
+    border: 1px solid #282B38;
+    color: #CBD5E1;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+</style>
+
+<style>
+  body {
+    width: 1920px; height: 960px; background: #0A0A0F;
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .modal-window {
+    width: 1840px; height: 900px; background: #0D0E14; border: 1px solid #242735;
+    border-radius: 16px; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .modal-top {
+    padding: 16px 28px; background: #11131C; border-bottom: 1px solid #1E212E;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .modal-body {
+    flex: 1; display: flex; padding: 28px 36px; gap: 36px;
+  }
+  .calc-side {
+    width: 440px; background: #12141E; border: 1px solid #232738; border-radius: 14px;
+    padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .form-side {
+    flex: 1; display: flex; flex-direction: column; gap: 20px;
+  }
+  .input-box {
+    background: #151722; border: 1px solid #282C3D; border-radius: 8px;
+    padding: 12px 16px; color: #FFFFFF; font-size: 14px; width: 100%;
+  }
+  .tooth-chip {
+    background: #181A25; border: 1px solid #282C3E; border-radius: 6px;
+    padding: 8px 14px; font-family: 'JetBrains Mono'; font-size: 14px; font-weight: 700;
+  }
+  .stage-chip {
+    padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700;
+    border: 1px solid #282C3E; background: #151722; color: #CBD5E1;
+  }
+  .stage-chip.active {
+    background: #1E293B; border-color: #3B82F6; color: #60A5FA;
+  }
+</style>
+</head>
+<body>
+  <div class="modal-window">
+    <div class="modal-top">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-size:20px; font-weight:800; color:#FFFFFF;">تسجيل فاتورة جديدة</span>
+        <span style="background:#5B21B6; color:#E9D5FF; font-family:'JetBrains Mono'; font-size:12px; font-weight:700; padding:3px 10px; border-radius:6px;">#A00006</span>
+        <span style="color:#64748B; font-size:13px; margin-right:12px;">إدخال تفاصيل الحالة وتطبيق قائمة أسعار الطبيب واحتساب المستحقات آلياً</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="font-size:12px; color:#64748B;">⏱️ حفظ تلقائي (30ث)</span>
+        <span style="font-size:18px; color:#94A3B8; cursor:pointer;">✕</span>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <!-- Left Calculation Panel -->
+      <div class="calc-side">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <h3 style="font-size:16px; font-weight:800; color:#FFFFFF;">الاحتساب المالي التلقائي</h3>
+              <span style="font-size:12px; color:#64748B;">وفق اتفاقية أسعار المختبر</span>
+            </div>
+            <span style="background:#1E293B; color:#93C5FD; font-size:11px; padding:4px 8px; border-radius:4px; font-weight:700;">السعر القياسي</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:14px; font-size:13px; color:#94A3B8; border-bottom:1px solid #202434; padding-bottom:18px;">
+            <div style="display:flex; justify-content:space-between;"><span>سعر الوحدة قبل الخصم:</span><span style="font-weight:700; color:#FFFFFF;">0 د.ع</span></div>
+            <div style="display:flex; justify-content:space-between;"><span>سعر الوحدة بعد الخصم المعتمد:</span><span style="font-weight:700; color:#FFFFFF;">0 د.ع</span></div>
+            <div style="display:flex; justify-content:space-between;"><span>إجمالي الحساب قبل الخصم:</span><span style="font-weight:700; color:#FFFFFF;">1 × 0 د.ع = 0 د.ع</span></div>
+          </div>
+
+          <!-- Highlight Total Box -->
+          <div style="background:#2563EB; border-radius:12px; padding:20px; color:white; margin-top:20px;">
+            <span style="font-size:13px; opacity:0.9; display:block;">المبلغ الصافي المطلوب (Net Total):</span>
+            <span style="font-size:36px; font-weight:800; font-family:'JetBrains Mono'; display:block; margin:6px 0;">0 د.ع</span>
+            <span style="font-size:12px; opacity:0.85;">1 وحدات • بدون تحديد (نهائي مسلم)</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <button class="btn-purple" style="width:100%; justify-content:center; padding:14px; font-size:16px;">✓ تسجيل وحفظ الفاتورة</button>
+          <div style="display:flex; gap:10px;">
+            <button class="btn-dark" style="flex:1; padding:10px;">💾 حفظ كمسودة</button>
+            <button class="btn-dark" style="padding:10px 20px; color:#EF4444;">إلغاء</button>
+          </div>
+          <span style="font-size:11px; color:#64748B; text-align:center;">اختصار لوحة المفاتيح: Ctrl + Enter للحفظ السريع</span>
+        </div>
+      </div>
+
+      <!-- Right Form Details -->
+      <div class="form-side">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+          <div>
+            <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">الطبيب / العيادة <span style="color:#EF4444;">*</span></label>
+            <div class="input-box" style="display:flex; justify-content:space-between; align-items:center;">
+              <span>د. دكتور احمد (بغداد)</span>
+              <span style="color:#64748B;">▼</span>
+            </div>
+          </div>
+          <div>
+            <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">اسم المريض الكامل <span style="color:#EF4444;">*</span></label>
+            <div class="input-box" style="color:#64748B;">مثال: محمد علي حسن</div>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">نوع العمل / التركيبة <span style="color:#EF4444;">*</span></label>
+          <div class="input-box" style="display:flex; justify-content:space-between; align-items:center;">
+            <span>اختر نوع العمل...</span>
+            <span style="color:#64748B;">▼</span>
+          </div>
+        </div>
+
+        <!-- Tooth Selection -->
+        <div>
+          <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">عدد الوحدات (Units) • تحديد الأسنان</label>
+          <div style="display:flex; gap:8px;">
+            <span class="tooth-chip" style="background:#6D28D9; border-color:#8B5CF6; color:white;">1</span>
+            <span class="tooth-chip">2</span>
+            <span class="tooth-chip">3</span>
+            <span class="tooth-chip">4</span>
+            <span class="tooth-chip">6</span>
+            <span class="tooth-chip">8</span>
+            <span class="tooth-chip">12</span>
+            <span class="tooth-chip">14</span>
+            <span class="tooth-chip">28</span>
+          </div>
+        </div>
+
+        <!-- Production Stage -->
+        <div>
+          <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">حالة العمل والإنتاج <span style="color:#EF4444;">*</span></label>
+          <div style="display:flex; gap:12px;">
+            <span class="stage-chip active">● نهائي (مسلم)</span>
+            <span class="stage-chip">تجربة (Check)</span>
+            <span class="stage-chip">فحص معدن</span>
+            <span class="stage-chip">إعادة عمل (Remake)</span>
+            <span class="stage-chip">تصليح (Repair)</span>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">الفنيون المسؤولون عن الحالة (Technicians)</label>
+          <div class="input-box" style="color:#64748B;">انقر لتحديد الفني / الفنيين المسؤولين عن هذه الحالة...</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:20px;">
+          <div>
+            <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">ملاحظات إضافية (اللون، التعليمات)</label>
+            <div class="input-box" style="color:#64748B;">مثال: لون A2، جسر علوي، عاجل...</div>
+          </div>
+          <div>
+            <label style="font-size:13px; font-weight:700; color:#CBD5E1; display:block; margin-bottom:8px;">تاريخ استلام الحالة</label>
+            <div class="input-box" style="font-family:'JetBrains Mono';">10/15/2026 📅</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', system-ui, sans-serif; }
+  body {
+    background-color: #08080A;
+    color: #F8FAFC;
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+  }
+  .card {
+    background: #101116;
+    border: 1px solid #1E202A;
+    border-radius: 12px;
+  }
+  .btn-purple {
+    background: #6D28D9;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-size: 14px;
+  }
+  .btn-dark {
+    background: #181920;
+    border: 1px solid #282B38;
+    color: #CBD5E1;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+</style>
+
+<style>
+  body { width: 1920px; height: 960px; padding: 24px 40px; display: flex; flex-direction: column; gap: 24px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .kpi-card {
+    background: #101116; border: 1px solid #1D202B; border-radius: 12px; padding: 20px 24px;
+    display: flex; flex-direction: column; justify-content: space-between; min-height: 155px;
+  }
+  .kpi-title { font-size: 14px; color: #94A3B8; font-weight: 600; }
+  .kpi-value { font-size: 32px; font-weight: 800; color: #10B981; font-family: 'JetBrains Mono', sans-serif; }
+  .kpi-badge { font-size: 11px; padding: 3px 12px; border-radius: 20px; width: fit-content; font-weight: 600; }
+</style>
+</head>
+<body>
+  <!-- Title Bar -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding-bottom:16px; border-bottom:1px solid #1A1C24;">
+    <div>
+      <h1 style="font-size:26px; font-weight:800; color:#FFFFFF;">lab</h1>
+      <p style="font-size:14px; color:#64748B;">لوحة المؤشرات والتحليلات المالية والتشغيلية</p>
+    </div>
+    <div style="display:flex; gap:12px;">
+      <button class="btn-purple">+ تسجيل فاتورة</button>
+      <button class="btn-dark">💳 تسديدات حساب</button>
+      <button class="btn-dark">📄 كشوفات وتقارير PDF</button>
+      <button class="btn-dark">⚙️ تخصيص المؤشرات</button>
+    </div>
+  </div>
+
+  <!-- 8 KPI Cards -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">إيرادات هذا الشهر</span><span>📈</span></div>
+      <div class="kpi-value">0 د.ع</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#064E3B; color:#34D399;">الشهر الحالي</span>
+        <span style="font-size:12px; color:#64748B;">0 سند قبض</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">الفواتير والحالات المعلقة</span><span>⏱️</span></div>
+      <div class="kpi-value" style="color:#FBBF24;">0 حالة</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#064E3B; color:#34D399;">مسددة بالكامل</span>
+        <span style="font-size:12px; color:#64748B;">المتبقي للتحصيل: 0 د.ع</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">الأطباء غير النشطين</span><span>👥</span></div>
+      <div class="kpi-value" style="color:#F87171;">1 طبيب</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#7F1D1D; color:#FECACA;">100% غير نشط</span>
+        <span style="font-size:12px; color:#64748B;">من أصل 1 طبيب</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">صافي الفواتير الصادرة</span><span>💼</span></div>
+      <div class="kpi-value" style="color:#FFFFFF;">0 د.ع</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#312E81; color:#C7D2FE;">الصافي الإجمالي</span>
+        <span style="font-size:12px; color:#64748B;">0 حالة مسجلة</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">إجمالي المقبوضات النقدية</span><span>💳</span></div>
+      <div class="kpi-value">0 د.ع</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#064E3B; color:#34D399;">مقبوضات مسددة</span>
+        <span style="font-size:12px; color:#64748B;">عدد السندات: 0</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">إجمالي الديون والمتبقي</span><span>🔄</span></div>
+      <div class="kpi-value" style="color:#F87171;">0 د.ع</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#064E3B; color:#34D399;">تمت التصفية</span>
+        <span style="font-size:12px; color:#64748B;">رصيد صفر</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">إجمالي الخصومات الممنوحة</span><span>%</span></div>
+      <div class="kpi-value" style="color:#C084FC;">0 د.ع</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#3B0764; color:#E9D5FF;">مخفض من الحساب</span>
+        <span style="font-size:12px; color:#64748B;">0 خصم ممنوح</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div style="display:flex; justify-content:space-between;"><span class="kpi-title">الأطباء النشطون</span><span>👤</span></div>
+      <div class="kpi-value" style="color:#60A5FA;">1 / 0</div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kpi-badge" style="background:#1E3A8A; color:#BFDBFE;">0% تفاعل</span>
+        <span style="font-size:12px; color:#64748B;">1 متوقف</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Monthly Performance Container -->
+  <div class="card" style="padding:24px 32px; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <h3 style="font-size:18px; font-weight:800;">الأداء المالي الشهري (الفواتير مقابل المسدد)</h3>
+        <span style="font-size:13px; color:#64748B;">مقارنة إجمالي قيمة الفواتير مع الدفعات المسددة للمختبر (lab)</span>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn-dark">آخر 12 شهراً</button>
+        <button class="btn-dark" style="background:#6D28D9; color:white;">آخر 6 أشهر</button>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; padding-top:20px; border-top:1px solid #1E202A;">
+      <div><span style="font-size:12px; color:#64748B; display:block;">إجمالي الفواتير للفترة:</span><span style="font-weight:700; font-size:16px; font-family:'JetBrains Mono';">0 د.ع</span></div>
+      <div><span style="font-size:12px; color:#64748B; display:block;">إجمالي التحصيلات للفترة:</span><span style="font-weight:700; font-size:16px; color:#10B981; font-family:'JetBrains Mono';">0 د.ع</span></div>
+      <div><span style="font-size:12px; color:#64748B; display:block;">نسبة التحصيل للفترة:</span><span style="font-weight:700; font-size:16px; font-family:'JetBrains Mono';">0%</span></div>
+      <div><span style="font-size:12px; color:#64748B; display:block;">عدد الحالات المسجلة:</span><span style="font-weight:700; font-size:16px; font-family:'JetBrains Mono';">0 حالة</span></div>
+    </div>
+
+    <div style="display:flex; gap:24px; font-size:13px; color:#94A3B8; justify-content:center; padding-top:16px;">
+      <span style="display:flex; align-items:center; gap:6px;"><span style="width:12px; height:12px; background:#2563EB; display:inline-block; border-radius:2px;"></span> إجمالي الفواتير الصافية (د.ع)</span>
+      <span style="display:flex; align-items:center; gap:6px;"><span style="width:12px; height:12px; background:#10B981; display:inline-block; border-radius:2px;"></span> الدفعات المستلمة (د.ع)</span>
+    </div>
+  </div>
+</body>
+</html>

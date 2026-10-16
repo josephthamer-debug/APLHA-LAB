@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', system-ui, sans-serif; }
+  body {
+    background-color: #08080A;
+    color: #F8FAFC;
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+  }
+  .card {
+    background: #101116;
+    border: 1px solid #1E202A;
+    border-radius: 12px;
+  }
+  .btn-purple {
+    background: #6D28D9;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    font-size: 14px;
+  }
+  .btn-dark {
+    background: #181920;
+    border: 1px solid #282B38;
+    color: #CBD5E1;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+</style>
+
+<style>
+  body { width: 1920px; height: 960px; padding: 24px 40px; display: flex; flex-direction: column; gap: 20px; }
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .chart-box {
+    background: #101117; border: 1px solid #1E212E; border-radius: 14px; padding: 24px 32px;
+    flex: 1; display: flex; flex-direction: column; justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+  <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid #1E212E;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-size:24px;">📊</span>
+      <div>
+        <h1 style="font-size:22px; font-weight:800; color:#FFFFFF;">الإحصائيات والتحليلات المالية للمختبر</h1>
+        <span style="font-size:12px; color:#64748B;">تحليل مالي وتشغيلي متكامل لصافي الفواتير، الديون المعلقة، حسابات الأطباء، وعمولات المندوبين</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn-dark" style="background:#6D28D9; color:white;">كافة الفترات</button>
+      <button class="btn-dark">هذا الشهر</button>
+      <button class="btn-dark">هذا العام</button>
+      <button class="btn-dark">تاريخ مخصص</button>
+      <button class="btn-dark" style="background:#047857; color:white;">📥 تصدير PDF</button>
+    </div>
+  </div>
+
+  <!-- 4 Stats Cards -->
+  <div class="kpi-row">
+    <div class="card" style="padding:18px 22px;">
+      <span style="font-size:13px; color:#94A3B8;">إجمالي الفواتير الصادرة</span>
+      <span style="font-size:28px; font-weight:800; color:white; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">0 حالة مسجلة • 0 د.ع خصومات</span>
+    </div>
+    <div class="card" style="padding:18px 22px;">
+      <span style="font-size:13px; color:#94A3B8;">صافي فواتير المختبر</span>
+      <span style="font-size:28px; font-weight:800; color:#38BDF8; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">صافي القيمة المستحقة بعد احتساب الخصومات</span>
+    </div>
+    <div class="card" style="padding:18px 22px;">
+      <span style="font-size:13px; color:#94A3B8;">إجمالي تسديدات الحساب المستلمة</span>
+      <span style="font-size:28px; font-weight:800; color:#34D399; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">نسبة التحصيل: 0.0% (0 سند قبض)</span>
+    </div>
+    <div class="card" style="padding:18px 22px;">
+      <span style="font-size:13px; color:#94A3B8;">إجمالي ديون المختبر في السوق</span>
+      <span style="font-size:28px; font-weight:800; color:#F87171; display:block; margin:6px 0; font-family:'JetBrains Mono';">0 د.ع</span>
+      <span style="font-size:11px; color:#64748B;">مجموع المبالغ المتبقية بذمة الأطباء</span>
+    </div>
+  </div>
+
+  <!-- Analytics View Tabs -->
+  <div style="display:flex; gap:12px; border-bottom:1px solid #1E212E; padding-bottom:8px;">
+    <span class="btn-dark" style="background:#1E2232; color:#C084FC; font-weight:700;">📊 الرؤية العامة والمخططات</span>
+    <span class="btn-dark">📈 تقرير أرباح المختبر والفواتير</span>
+    <span class="btn-dark">👥 حسابات الأطباء التفصيلية (2)</span>
+    <span class="btn-dark">🦷 التركيبات وأنواع العمل</span>
+    <span class="btn-dark">🛠️ إنتاجية الفنيين (30 يوماً) (3)</span>
+  </div>
+
+  <!-- Recharts Monthly Container -->
+  <div class="chart-box">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <h3 style="font-size:18px; font-weight:800; color:#FFFFFF;">تقرير أرباح المختبر شهرياً مقابل عدد الفواتير <span style="background:#0284C7; font-size:10px; padding:2px 8px; border-radius:4px; font-family:'JetBrains Mono';">Recharts</span></h3>
+        <span style="font-size:13px; color:#64748B;">تحليل بياني متقدم يوضح نمو أرباح المختبر الصافية مقابل كثافة الفواتير</span>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-dark">المندوب: جميع المندوبين ▼</button>
+        <button class="btn-dark" style="background:#6D28D9; color:white;">مدمج</button>
+        <button class="btn-dark">الأرباح</button>
+        <button class="btn-dark">الفواتير</button>
+      </div>
+    </div>
+
+    <!-- Chart Placeholder Graphic with Gridlines and Markers -->
+    <div style="height:200px; display:flex; align-items:flex-end; gap:36px; padding:20px 40px; border-bottom:1px solid #1E212E; border-top:1px solid #1E212E; margin:16px 0;">
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:40px; height:80px; background:#2563EB; border-radius:4px 4px 0 0;"></div>
+        <span style="font-size:11px; color:#64748B;">مايو</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:40px; height:120px; background:#2563EB; border-radius:4px 4px 0 0;"></div>
+        <span style="font-size:11px; color:#64748B;">يونيو</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:40px; height:95px; background:#2563EB; border-radius:4px 4px 0 0;"></div>
+        <span style="font-size:11px; color:#64748B;">يوليو</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:40px; height:140px; background:#2563EB; border-radius:4px 4px 0 0;"></div>
+        <span style="font-size:11px; color:#64748B;">أغسطس</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:40px; height:160px; background:#6D28D9; border-radius:4px 4px 0 0;"></div>
+        <span style="font-size:11px; color:#C084FC; font-weight:700;">سبتمبر</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:40px; height:110px; background:#2563EB; border-radius:4px 4px 0 0;"></div>
+        <span style="font-size:11px; color:#64748B;">أكتوبر</span>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;">
+      <div><span style="font-size:11px; color:#64748B;">إجمالي أرباح المختبر الصافية:</span><span style="font-weight:700; font-size:15px; display:block; color:#38BDF8;">0 د.ع</span></div>
+      <div><span style="font-size:11px; color:#64748B;">إجمالي الفواتير المسجلة:</span><span style="font-weight:700; font-size:15px; display:block; color:#FBBF24;">0 فاتورة</span></div>
+      <div><span style="font-size:11px; color:#64748B;">متوسط ربح الفاتورة:</span><span style="font-weight:700; font-size:15px; display:block; color:#34D399;">0 د.ع</span></div>
+      <div><span style="font-size:11px; color:#64748B;">أعلى شهر إنتاجاً وأرباحاً:</span><span style="font-weight:700; font-size:15px; display:block; color:#A78BFA;">سبتمبر 2026</span></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Alpha Lab Management System",
+  "description": "Specialized management software for dental manufacturing laboratories. Precision in every case, clarity in every account. نظام إدارة مختبرات صناعة الأسنان.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
